@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "grtT+Kt+nBWtcqUsSUxNL3fBMD8cphHvoGhGuB+Kl2KX6/QKFMS/lfPLUU51eASG3Yybf8NOmmpiwnejOPAokg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\artis\\RiderProjects\\asp-todo\\asp-todo\\asp-todo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\artis\\.nuget\\packages\\aspnetcore.sasscompiler\\1.53.0\\aspnetcore.sasscompiler.1.53.0.nupkg.sha512",
+    "C:\\Users\\artis\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.0\\microsoft.extensions.configuration.3.1.0.nupkg.sha512",
+    "C:\\Users\\artis\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.0\\microsoft.extensions.configuration.abstractions.3.1.0.nupkg.sha512",
+    "C:\\Users\\artis\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.0\\microsoft.extensions.configuration.binder.3.1.0.nupkg.sha512",
+    "C:\\Users\\artis\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.0\\microsoft.extensions.dependencyinjection.abstractions.3.1.0.nupkg.sha512",
+    "C:\\Users\\artis\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.0\\microsoft.extensions.fileproviders.abstractions.3.1.0.nupkg.sha512",
+    "C:\\Users\\artis\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\3.1.0\\microsoft.extensions.hosting.abstractions.3.1.0.nupkg.sha512",
+    "C:\\Users\\artis\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.0\\microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
+    "C:\\Users\\artis\\.nuget\\packages\\microsoft.extensions.options\\3.1.0\\microsoft.extensions.options.3.1.0.nupkg.sha512",
+    "C:\\Users\\artis\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.0\\microsoft.extensions.primitives.3.1.0.nupkg.sha512",
+    "C:\\Users\\artis\\.nuget\\packages\\westwind.aspnetcore.livereload\\0.3.6\\westwind.aspnetcore.livereload.0.3.6.nupkg.sha512"
+  ],
+  "logs": []
+}

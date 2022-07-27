@@ -1,0 +1,76 @@
+﻿$header-background: #59fff7;
+$app-background: #b6fff9;
+
+body {
+  margin: 0;
+}
+
+.page-header {
+  background-color: $header-background;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  height: 4rem;
+  
+  h2 {
+    width: 90%;
+    margin: auto;
+  }
+  #new-item-btn {
+    margin: auto 0.3rem;
+    width: 150px;
+    height: 2rem;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  background-color: $app-background;
+  .sidebar-container {
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 0.7rem;
+    li {
+      list-style: none;
+      height: 2rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      p{
+        width: 50%;
+        text-align: center;
+      }
+      span {
+        border: 2px solid $header-background;
+        background-color: $app-background;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 100%;
+        text-align: center;
+      }
+    }
+    #projects-listitem {
+      cursor: default;
+    }
+  }
+  .todo-container {
+    width: 100%;
+    .note-element {
+      border: 2px solid red;
+      display: flex;
+      margin: 0.5rem;
+      justify-content: space-between;
+      h4 {
+        width: 30%;
+        text-align: center;
+      }
+      button {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+}
+
+.page-header {
+  background-color: #59fff7;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  height: 4rem;
+}
+.page-header h2 {
+  width: 90%;
+  margin: auto;
+}
+.page-header #new-item-btn {
+  margin: auto 0.3rem;
+  width: 150px;
+  height: 2rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  background-color: #b6fff9;
+}
+.app .sidebar-container {
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  margin: 0.7rem;
+}
+.app .sidebar-container li {
+  list-style: none;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.app .sidebar-container li p {
+  width: 50%;
+  text-align: center;
+}
+.app .sidebar-container li span {
+  border: 2px solid #59fff7;
+  background-color: #b6fff9;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  text-align: center;
+}
+.app .sidebar-container #projects-listitem {
+  cursor: default;
+}
+.app .todo-container {
+  width: 100%;
+}
+.app .todo-container .note-element {
+  border: 2px solid red;
+  display: flex;
+  margin: 0.5rem;
+  justify-content: space-between;
+}
+.app .todo-container .note-element h4 {
+  width: 30%;
+  text-align: center;
+}
+.app .todo-container .note-element button {
+  margin: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

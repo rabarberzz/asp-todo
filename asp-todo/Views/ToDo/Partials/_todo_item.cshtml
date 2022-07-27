@@ -1,0 +1,19 @@
+﻿@model toDoModel
+
+@{
+    var ProjectList = Model.ProjectList;
+}
+
+
+@foreach (ProjectModel project in ProjectList)
+{
+    foreach (toDoItem item in project.toDoList)
+    {
+        <div class="note-element">
+            <h4>@item.ItemTitle</h4>
+            <h4>@item.ItemPriority</h4>
+            <h4>@item.ItemDueDate.ToString()</h4>
+            <button>Remove</button>
+        </div>
+    }
+} 

@@ -1,0 +1,73 @@
+﻿@model toDoModel
+
+@{
+    ViewData["Title"] = "To Do App";
+    var ProjectList = Model.ProjectList;
+}
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+          $.ajax({
+            url: "ToDo/initHomeListItems",
+            type: "POST",
+            success: function(partialView) {
+                $('.todo-container').append(partialView);
+             }
+          });
+          $.ajax({
+             url: "ToDo/initHomeProjectItems",
+             type: "POST",
+             success: function(partialView) {
+                $('.sidebar-project-list').append(partialView);
+             }
+          });
+          
+        });
+        function actionSwitchProjects(name){
+            
+            console.log("switch project: " + name);
+            $.ajax({
+                url: "ToDo/switchProject",
+                type: "POST",
+                data: {inputProjectName: name},
+                success: function (partialView) {
+                    $('.todo-container').empty().append(partialView);
+                }
+            });
+        }
+    </script>
+}
+
+<header class="page-header">
+    <h2>To Do List</h2>
+    <button id="new-item-btn" class="init-projs"  >Add new project</button>
+    <button id="new-item-btn">New items</button>
+</header>
+
+<div class="main-container app">
+    <div class="sidebar-container">
+        <ul class="sidebar-project-list">
+            <li onclick="location.href='@Url.Action("todo_page")'"><p>Home</p></li>
+            <li><p>Today</p></li>
+            <li><p>Week</p></li>
+            <li id="projects-listitem"><p>Projects</p></li>
+        </ul>
+    </div>
+    <div class="todo-container">
+        @* <div class="note-element"> *@
+        @*     <h4>Default to do item</h4> *@
+        @*     <h4>High</h4> *@
+        @*     <h4>20.07.2022</h4> *@
+        @*     <button>Remove</button> *@
+        @* </div> *@
+        @* <div class="note-element"> *@
+        @*     <h4>Default to do item</h4> *@
+        @*     <h4>High</h4> *@
+        @*     <h4>20.07.2022</h4> *@
+        @*     <button>Remove</button> *@
+        @* </div> *@
+        
+    </div>
+</div>
