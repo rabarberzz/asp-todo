@@ -1,0 +1,26 @@
+﻿@model toDoModel
+
+@{
+    string[] PriorityList = System.Enum.GetNames(typeof(toDoPriority));
+    string[] ProjectListStrArr = @Model.ProjectList.ConvertAll(input => input.ProjectName.ToString()).ToArray();
+}
+
+<form name="new-item-form" id="new-item-form">
+    <h4>Create a new to do item</h4>
+    <input type="text" name="title" placeholder="Enter title">
+    <input type="text" name="description" placeholder="Enter description">
+    <input type="date" name="dueDate" placeholder="Enter due date">
+    <select name="priority" id="new-item-priority">
+        @foreach (string priority in PriorityList)
+        {
+            <option value="@priority">@priority</option>
+        }
+    </select>
+    <select name="project" id="new-item-project">
+        @foreach (string project in ProjectListStrArr)
+        {
+            <option value="@project">@project</option>
+        }
+    </select>
+</form>
+<button onclick="addNewItemFromForm()">Add Item</button>

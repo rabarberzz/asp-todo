@@ -2,14 +2,14 @@
 
 @{
     var ProjectList = Model.ProjectList;
+    
 }
-
 
 
 @foreach (ProjectModel project in ProjectList)
 {
-    <li id="project-item" onclick="actionSwitchProjects('@project.ProjectName')">
+    <li class="project-item" onclick="actionSwitchProjects('@project.ProjectName')">
         <p id="project-name">@project.ProjectName</p>
-        <span id="project-count">@project.toDoList.Count</span>
+        <span id="project-count" >@project.toDoList.Count</span>
     </li>
 }

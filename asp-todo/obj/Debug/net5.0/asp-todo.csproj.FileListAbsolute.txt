@@ -49,3 +49,4 @@ C:\Users\artis\RiderProjects\asp-todo\asp-todo\bin\Debug\net5.0\Westwind.AspNetC
 C:\Users\artis\RiderProjects\asp-todo\asp-todo\obj\Debug\net5.0\Razor\Views\Shared\_LayoutToDo.cshtml.g.cs
 C:\Users\artis\RiderProjects\asp-todo\asp-todo\obj\Debug\net5.0\Razor\Views\ToDo\Partials\_todo_item.cshtml.g.cs
 C:\Users\artis\RiderProjects\asp-todo\asp-todo\obj\Debug\net5.0\Razor\Views\ToDo\Partials\_projectList_init.cshtml.g.cs
+C:\Users\artis\RiderProjects\asp-todo\asp-todo\obj\Debug\net5.0\Razor\Views\ToDo\Partials\_newToDoItemForm.cshtml.g.cs

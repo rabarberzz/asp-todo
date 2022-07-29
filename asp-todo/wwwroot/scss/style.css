@@ -16,8 +16,43 @@ body {
 }
 .page-header #new-item-btn {
   margin: auto 0.3rem;
-  width: 150px;
-  height: 2rem;
+  width: 120px;
+  height: 3rem;
+}
+
+.form-container {
+  position: fixed;
+  text-align: center;
+  background-color: white;
+  padding: 0.5rem;
+  display: none;
+  border-radius: 10px;
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 0.5rem;
+}
+.form-container form input {
+  margin: 2px;
+}
+.form-container form h4 {
+  margin-top: -0.4rem;
+  margin-bottom: 0.5rem;
+}
+.form-container button {
+  margin: 0.2rem;
+}
+
+.form-container-project {
+  right: 17rem;
+  top: 0.5rem;
+}
+
+.form-container-item {
+  right: 2rem;
+  top: 4.15rem;
 }
 
 .app {
@@ -58,17 +93,54 @@ body {
   width: 100%;
 }
 .app .todo-container .note-element {
-  border: 2px solid red;
   display: flex;
-  margin: 0.5rem;
+  flex-direction: column;
+  margin: 0.5rem 1rem;
+  border-radius: 10px;
+}
+.app .todo-container .note-element-main {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
-.app .todo-container .note-element h4 {
+.app .todo-container .note-element-main h4 {
+  text-align: center;
+  width: 30%;
+}
+.app .todo-container .note-element-main button {
+  margin: 1rem;
+  border-radius: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  background-color: #b6fff9;
+}
+.app .todo-container .note-element-extra {
+  text-align: center;
+  border-top: 2px solid #59fff7;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app .todo-container .note-element-extra button {
+  margin: 1rem;
+  background-color: rgba(255, 57, 57, 0.8);
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+.app .todo-container .note-element-extra p {
   width: 30%;
   text-align: center;
+  margin: 0.2rem;
 }
-.app .todo-container .note-element button {
-  margin: 0;
+.app .todo-container #Low {
+  border: 2px solid green;
+}
+.app .todo-container #Medium {
+  border: 2px solid orange;
+}
+.app .todo-container #High {
+  border: 2px solid red;
 }
 
 /*# sourceMappingURL=style.css.map */

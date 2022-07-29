@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Security.Policy;
 
 namespace asp_todo.Models
@@ -18,6 +19,7 @@ namespace asp_todo.Models
 
     public class toDoItem
     {
+        public long ItemIdentifier { get; set; }
         public string ItemTitle { get; set; }
         public string ItemDescription { get; set; }
         public DateTime ItemDueDate { get; set; }

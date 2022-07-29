@@ -9,11 +9,21 @@
 {
     foreach (toDoItem item in project.toDoList)
     {
-        <div class="note-element">
-            <h4>@item.ItemTitle</h4>
-            <h4>@item.ItemPriority</h4>
-            <h4>@item.ItemDueDate.ToString()</h4>
-            <button>Remove</button>
+        <div class="note-element" id="@item.ItemPriority" >
+            <div class="note-element-main">
+                <h4>@item.ItemTitle</h4>
+                <h4>@item.ItemDueDate.ToShortDateString()</h4>
+                <button onclick="toggleNoteExtra($('.note-element-extra', this.parentElement.parentElement))">More details</button>
+            </div>
+            <div class="note-element-extra" style="display: none">
+                <p>
+                    @item.ItemDescription
+                </p>
+                <p>
+                    Priority: @item.ItemPriority
+                </p>
+                <button onclick="removeToDoItem('@project.ProjectName', '@item.ItemIdentifier', this)">Remove</button>
+            </div>
         </div>
     }
 } 

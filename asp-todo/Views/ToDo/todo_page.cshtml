@@ -2,32 +2,18 @@
 
 @{
     ViewData["Title"] = "To Do App";
-    var ProjectList = Model.ProjectList;
+    //var ProjectList = Model.ProjectList;
+    
 }
 
 @section Scripts
 {
     <script>
         $(document).ready(function() {
-          $.ajax({
-            url: "ToDo/initHomeListItems",
-            type: "POST",
-            success: function(partialView) {
-                $('.todo-container').append(partialView);
-             }
-          });
-          $.ajax({
-             url: "ToDo/initHomeProjectItems",
-             type: "POST",
-             success: function(partialView) {
-                $('.sidebar-project-list').append(partialView);
-             }
-          });
-          
+          actionDrawAllToDoItems();
+          actionDrawAllProjects();      
         });
-        function actionSwitchProjects(name){
-            
-            console.log("switch project: " + name);
+        function actionSwitchProjects(name){           
             $.ajax({
                 url: "ToDo/switchProject",
                 type: "POST",
@@ -37,19 +23,109 @@
                 }
             });
         }
-    </script>
+        function actionDrawAllToDoItems(){
+            $.ajax({
+                url: "ToDo/drawAllToDoItems",
+                type: "POST",
+                success: function (partialView) {
+                    $('.todo-container').empty().append(partialView);
+                }
+            });
+        }
+        function actionDrawAllProjects(){
+            $.ajax({
+                 url: "ToDo/drawMainProjectItems",
+                 type: "POST",
+                 success: function(partialView) {
+                    $('#projects-listitem').nextAll().remove();
+                    $('#projects-listitem').after(partialView);
+                 }
+            });
+        }
+        function toggleNewItemForm(){
+            let newItemForm = $('.form-container-item').empty();
+            $.ajax({
+                url: "ToDo/getNewToDoItemForm",
+                type: "POST",
+                success: function(partialView) {
+                    newItemForm.append(partialView).toggle();
+                }
+            });
+        }
+        function addNewItemFromForm(){
+            var formElement = $("form[name=new-item-form]")[0];
+            var formData = new FormData(formElement);
+            $.ajax({
+                url: "ToDo/addNewToDoItem",
+                type: "POST",
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: formData,
+                success: function() {
+                  actionDrawAllToDoItems();
+                  actionDrawAllProjects();
+                  $('.form-container-item').toggle();
+                }
+            });
+        }      
+        function addNewProjectFromForm(){
+            var formElement = $("form[name=new-project-form]")[0];
+            var formData = new FormData(formElement);
+            $.ajax({
+                url: "ToDo/addNewProject",
+                type: "POST",
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: formData,
+                success: function() {
+                  actionDrawAllProjects();
+                  $('.form-container-project').toggle();
+                }
+            });
+        }
+        function removeToDoItem(projectName, itemIdentifier, itemElement){            
+            $.ajax({
+                url: "ToDo/removeToDoItem",
+                type: "POST",               
+                data: {projectName: projectName, itemIdentifier: itemIdentifier},
+                success: function() {
+                  actionDrawAllProjects();
+                  $(itemElement.parentElement.parentElement).fadeOut('slow', function() {
+                    $(this).remove;
+                  });
+                }
+            });
+        }
+        function toggleNoteExtra(element){
+            $(element).slideToggle('slow');
+        }
+    </script> 
 }
 
 <header class="page-header">
     <h2>To Do List</h2>
-    <button id="new-item-btn" class="init-projs"  >Add new project</button>
-    <button id="new-item-btn">New items</button>
+    <button id="new-item-btn" class="init-projs" onclick="$('.form-container-project').toggle()"  >Add new project</button>
+    <button id="new-item-btn" onclick="toggleNewItemForm()">New items</button>
 </header>
+
+<div class="hidden-form-container">
+    <div class="form-container form-container-project">
+        <form name="new-project-form">
+            <h4>Create a new project</h4>
+            <input type="text" name="name" placeholder="Enter project name">
+        </form>
+        <button onclick="addNewProjectFromForm()">Add Project</button>
+    </div>
+    <div class="form-container form-container-item"></div>
+</div>
+    
 
 <div class="main-container app">
     <div class="sidebar-container">
         <ul class="sidebar-project-list">
-            <li onclick="location.href='@Url.Action("todo_page")'"><p>Home</p></li>
+            <li onclick="actionDrawAllToDoItems()"><p>Home</p></li>
             <li><p>Today</p></li>
             <li><p>Week</p></li>
             <li id="projects-listitem"><p>Projects</p></li>
