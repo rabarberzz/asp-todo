@@ -42,6 +42,24 @@
                  }
             });
         }
+        function actionDrawTodayItems(){
+            $.ajax({
+                 url: "ToDo/drawTodayitems",
+                 type: "POST",
+                 success: function(partialView) {
+                    $('.todo-container').empty().append(partialView);
+                 }
+            });
+        }
+        function actionDrawWeekItems(){
+                    $.ajax({
+                         url: "ToDo/drawWeekItems",
+                         type: "POST",
+                         success: function(partialView) {
+                            $('.todo-container').empty().append(partialView);
+                         }
+                    });
+                }
         function toggleNewItemForm(){
             let newItemForm = $('.form-container-item').empty();
             $.ajax({
@@ -126,8 +144,8 @@
     <div class="sidebar-container">
         <ul class="sidebar-project-list">
             <li onclick="actionDrawAllToDoItems()"><p>Home</p></li>
-            <li><p>Today</p></li>
-            <li><p>Week</p></li>
+            <li onclick="actionDrawTodayItems()"><p>Today</p></li>
+            <li onclick="actionDrawWeekItems()"><p>Week</p></li>
             <li id="projects-listitem"><p>Projects</p></li>
         </ul>
     </div>

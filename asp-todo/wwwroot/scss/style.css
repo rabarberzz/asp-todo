@@ -1,5 +1,8 @@
 body {
   margin: 0;
+  font-family: "Calibri Light", serif;
+  min-height: 100vh;
+  background-color: #b6fff9;
 }
 
 .page-header {
@@ -13,11 +16,19 @@ body {
 .page-header h2 {
   width: 90%;
   margin: auto;
+  text-shadow: 5px 5px 4px #648288;
 }
 .page-header #new-item-btn {
   margin: auto 0.3rem;
   width: 120px;
   height: 3rem;
+  border: 2px solid rgba(87, 87, 87, 0.48);
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  font-family: "Calibri Light", serif;
+}
+.page-header #new-item-btn:hover {
+  background-color: rgba(128, 128, 128, 0.15);
 }
 
 .form-container {
@@ -36,6 +47,10 @@ body {
 }
 .form-container form input {
   margin: 2px;
+  font-family: "Calibri Light", serif;
+}
+.form-container form select {
+  font-family: "Calibri Light", serif;
 }
 .form-container form h4 {
   margin-top: -0.4rem;
@@ -43,6 +58,7 @@ body {
 }
 .form-container button {
   margin: 0.2rem;
+  font-family: "Calibri Light", serif;
 }
 
 .form-container-project {
@@ -65,6 +81,7 @@ body {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
   margin: 0.7rem;
+  height: max-content;
 }
 .app .sidebar-container li {
   list-style: none;
@@ -85,6 +102,10 @@ body {
   height: 1rem;
   border-radius: 100%;
   text-align: center;
+}
+.app .sidebar-container li:hover:not(#projects-listitem) {
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #818181;
 }
 .app .sidebar-container #projects-listitem {
   cursor: default;
@@ -112,6 +133,10 @@ body {
   border-radius: 15px;
   border: 2px solid rgba(0, 0, 0, 0.18);
   background-color: #b6fff9;
+  font-family: "Calibri Light", serif;
+}
+.app .todo-container .note-element-main button:hover {
+  background-color: rgba(128, 128, 128, 0.29);
 }
 .app .todo-container .note-element-extra {
   text-align: center;
@@ -123,10 +148,14 @@ body {
 }
 .app .todo-container .note-element-extra button {
   margin: 1rem;
-  background-color: rgba(255, 57, 57, 0.8);
+  background-color: rgba(253, 79, 79, 0.8);
   color: white;
   border: none;
   border-radius: 15px;
+  font-family: "Calibri Light", serif;
+}
+.app .todo-container .note-element-extra button:hover {
+  background-color: rgb(255, 57, 57);
 }
 .app .todo-container .note-element-extra p {
   width: 30%;

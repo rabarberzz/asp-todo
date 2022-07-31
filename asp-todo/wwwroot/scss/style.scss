@@ -1,9 +1,14 @@
 ﻿$header-background: #59fff7;
 $app-background: #b6fff9;
-$remove-btn-background: rgba(255, 57, 57, 0.8);
+$remove-btn-background: rgba(253, 79, 79, 0.8);
+$remove-btn-background-hover: rgba(255, 57, 57, 1);
+$page-font: "Calibri Light", serif;
 
 body {
   margin: 0;
+  font-family: $page-font;
+  min-height: 100vh;
+  background-color: $app-background;
 }
 
 .page-header {
@@ -17,11 +22,19 @@ body {
   h2 {
     width: 90%;
     margin: auto;
+    text-shadow: 5px 5px 4px #648288;
   }
   #new-item-btn {
     margin: auto 0.3rem;
     width: 120px;
     height: 3rem;
+    border: 2px solid rgba(87, 87, 87, 0.48);
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 20px;
+    font-family: $page-font;
+  }
+  #new-item-btn:hover {
+    background-color: rgba(128, 128, 128, 0.15);
   }
 }
 
@@ -34,12 +47,15 @@ body {
   border-radius: 10px;
   form{
     display: flex;
-    //position: fixed;
     flex-direction: column;
     background-color: white;
     padding: 0.5rem;
     input {
       margin: 2px;
+      font-family: $page-font;
+    }
+    select {
+      font-family: $page-font;
     }
     h4 {
       margin-top: -0.4rem;
@@ -48,6 +64,7 @@ body {
   }
   button {
     margin: 0.2rem;
+    font-family: $page-font;
   }
 }
 
@@ -70,6 +87,7 @@ body {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
     margin: 0.7rem;
+    height: max-content;
     li {
       list-style: none;
       height: 2rem;
@@ -89,6 +107,10 @@ body {
         border-radius: 100%;
         text-align: center;
       }
+    }
+    li:hover:not(#projects-listitem) {
+      font-weight: bold;
+      text-shadow: 2px 2px 4px #818181;
     }
     #projects-listitem {
       cursor: default;
@@ -115,6 +137,10 @@ body {
         border-radius: 15px;
         border: 2px solid rgba(0, 0, 0, 0.18);
         background-color: $app-background;
+        font-family: $page-font;
+      }
+      button:hover {
+        background-color: rgba(128, 128, 128, 0.29);
       }
       
     }
@@ -131,6 +157,10 @@ body {
         color: white;
         border: none;
         border-radius: 15px;
+        font-family: $page-font;
+      }
+      button:hover {
+        background-color: $remove-btn-background-hover;
       }
       p{
         width: 30%;

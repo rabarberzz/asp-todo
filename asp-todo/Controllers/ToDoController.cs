@@ -60,6 +60,44 @@ namespace asp_todo.Controllers
             return PartialView("Partials/_todo_item", MainToDoModel);
         }
 
+        public IActionResult drawTodayitems()
+        {
+            toDoModel todayModel = new toDoModel();
+            foreach (ProjectModel projectModel in MainToDoModel.ProjectList)
+            {
+                foreach (toDoItem doItem in projectModel.toDoList)
+                {
+                    if (doItem.ItemDueDate == DateTime.Today)
+                    {
+                        ProjectModel newProject = new ProjectModel();
+                        newProject.toDoList.Add(doItem);
+                        newProject.ProjectName = projectModel.ProjectName;
+                        todayModel.ProjectList.Add(newProject);
+                    }
+                }
+            }
+            return PartialView("Partials/_todo_item", todayModel);
+        }
+
+        public IActionResult drawWeekItems()
+        {
+            toDoModel weekModel = new toDoModel();
+            foreach (ProjectModel projectModel in MainToDoModel.ProjectList)
+            {
+                foreach (toDoItem doItem in projectModel.toDoList)
+                {
+                    if (doItem.ItemDueDate > DateTime.Today && doItem.ItemDueDate < DateTime.Today.AddDays(7))
+                    {
+                        ProjectModel newProject = new ProjectModel();
+                        newProject.toDoList.Add(doItem);
+                        newProject.ProjectName = projectModel.ProjectName;
+                        weekModel.ProjectList.Add(newProject);
+                    }
+                }
+            }
+            return PartialView("Partials/_todo_item", weekModel);
+        }
+
         public IActionResult getNewToDoItemForm()
         {
             return PartialView("Partials/_newToDoItemForm", MainToDoModel);
